@@ -1,0 +1,185 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+
+:root {
+  --color-violet: #7541c8;
+  --color-grayish: #48556a;
+  --color-blackish: #19212e;
+  --color-white: #ffffff;
+  --ff-primary: "Barlow Semi Condensed", sans-serif;
+  --fw-400: 500;
+  --fw-600: 600;
+  --fs-300: 1.2rem;
+  --fs-400: 1.3rem;
+  --fs-500: 1.8rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-400);
+  display: grid;
+  place-content: center;
+  background-color: #edf2f8;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h2 {
+  font-weight: var(--fw-600);
+}
+
+/* REUSABLE */
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+.testimonial > * {
+  margin-bottom: 1rem;
+}
+
+.bg-violet {
+  background: var(--color-violet);
+}
+.bg-grayish {
+  background: var(--color-grayish);
+}
+.bg-blackish {
+  background: var(--color-blackish);
+}
+
+.bg-white {
+  background: var(--color-white);
+}
+
+.text-white {
+  color: var(--color-white);
+}
+.text-grayish {
+  color: var(--color-grayish);
+}
+.border-primary-400 {
+  border: 2px solid #a775f1;
+}
+
+/* GRID */
+.testimonial-grid {
+  display: grid;
+  gap: 2rem;
+  grid-auto-columns: 1fr;
+  grid-template-areas:
+    "one"
+    "two"
+    "three"
+    "four"
+    "five";
+
+  padding: 3rem 2rem;
+  max-width: 1110px;
+  margin: 0 auto;
+}
+
+.testimonial {
+  font-size: var(--fs-400);
+  padding: 3rem;
+  border-radius: 8px;
+}
+
+.testimonial:nth-child(1) {
+  grid-area: one;
+}
+.testimonial:nth-child(2) {
+  grid-area: two;
+}
+.testimonial:nth-child(3) {
+  grid-area: three;
+}
+.testimonial:nth-child(4) {
+  grid-area: four;
+}
+.testimonial:nth-child(5) {
+  grid-area: five;
+}
+
+@media (min-width: 528px) {
+  .testimonial-grid {
+    grid-template-areas:
+      "one one"
+      "two three"
+      "five five"
+      "four four";
+  }
+}
+
+@media (min-width: 608px) {
+  .testimonial-grid {
+    grid-template-areas:
+      "one one"
+      "two five"
+      "three five"
+      "four four";
+  }
+}
+
+@media (min-width: 864px) {
+  .testimonial-grid {
+    grid-template-areas:
+      "one one two"
+      "five five five"
+      "three four four";
+  }
+}
+
+@media (min-width: 1200px) {
+  .testimonial-grid {
+    grid-template-areas:
+      "one one two five"
+      "three four four five";
+  }
+}
+
+.testimonial.quote {
+  background-image: url("img/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: top right 15%;
+}
+
+.testimonial img {
+  width: 30px;
+  border-radius: 50%;
+}
+
+.testimonial .name {
+  font-size: var(--fs-400);
+  font-weight: var(--fw-400);
+  line-height: 1;
+}
+
+.testimonial .position {
+  font-size: var(--fs-300);
+  opacity: 0.5;
+}
+
+.testimonial > p:first-of-type {
+  font-size: var(--fs-500);
+  line-height: 1.2;
+}
+
+.testimonial > p:last-of-type {
+  opacity: 0.7;
+  margin-bottom: 0;
+}
